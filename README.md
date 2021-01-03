@@ -43,7 +43,7 @@ You can follow the above tutorial up the 3:00 timestamp to set up reddit API wit
 Once you get your application setup, you must update all the 'xxxxxx' options in the reddit_info.json file with your account information to get this program to work.
 
 ## Editing main.py
-If you want to do your own sleuthing there are two key lines to change.
+If you want to do your own sleuthing or reduce the time it takes to run this program, there are two key lines to change.
 <ul>
   <li>top_headlines_in_year = subreddit.top("year", limit=1000) change limit to change submission's gathered number(note: 994 seems to be reddits limit on top posts)</li>
   <li>all_headlines = reddit.compile_subreddits(["popular", "news", "politics", "worldnews", "science"]) change the list to be whatever subreddits you want to gather from</li>
