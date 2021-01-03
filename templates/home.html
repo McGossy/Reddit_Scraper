@@ -1,0 +1,8 @@
+
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Top Words 2020</h1>
+    {% for key in words %}
+        <p><b>{{ key + ' '}}</b>: {{' '}} {{ words[key] }} </p>
+    {% endfor %}
+{% endblock content %}
