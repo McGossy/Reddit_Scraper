@@ -40,7 +40,7 @@ To use this software you will need
 https://www.youtube.com/watch?v=gIZJQmX-55U
 
 You can follow the above tutorial up the 3:00 timestamp to set up reddit API with a reddit account.
-Once you get your application setup, you must change all the 'xxxxxx' options in the json file to your account information to get this program to work.
+Once you get your application setup, you must update all the 'xxxxxx' options in the reddit_info.json file with your account information to get this program to work.
 
 ## Editing main.py
 If you want to do your own sleuthing there are two key lines to change.
