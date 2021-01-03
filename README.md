@@ -11,7 +11,7 @@ Scrapes data from a few of Reddit's most popular subreddits. We chose the top 10
 This site allows you to view the most common words, dates, and allows you to search through both of those categories.
 
 # URGENT
-Running this program will take roughly 5 minutes to gather all the submission data. It's going through 5000 reddit posts so it needs a second.
+Running this program will take roughly 5 minutes to gather all the submission data. It's going through 5000 reddit posts so it needs some time.
 Look at the 'editing main.py' section to alter this time frame.
 
 ## How to use
