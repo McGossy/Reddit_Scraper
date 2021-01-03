@@ -22,7 +22,7 @@ To use this software you will need
   <li>PyCharm 3.8.2</li>
   <li>Reddit Account</li>
   <li>Access to the Reddit API</li>
-  <li>You can install everything in requirements.txt, but tbh that's way overboard for whats needed. For some reason it shows everything I've ever downloaded. Here's the actually necessary modules you'll need to run.</li>
+  <li>You can install everything in requirements.txt, but tbh that's way overboard for whats needed. For some reason it shows everything I've ever downloaded. Here's the actual necessary modules you'll need to run.</li>
   <ul>
     <li>praw</li>
     <li>json</li>
