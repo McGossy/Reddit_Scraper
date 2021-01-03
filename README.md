@@ -10,8 +10,13 @@ Scrapes data from a few of Reddit's most popular subreddits. We chose the top 10
               
 This site allows you to view the most common words, dates, and allows you to search through both of those categories.
 
+# URGENT
+Running this program will take roughly 5 minutes to gather all the submission data. It's going through 5000 reddit posts so it needs a second.
+Look at the 'editing main.py' section to alter this time frame.
+
 ## How to use
-We unfortunately were blocked from uploading this to google app engine due to the sensitive information disclosed in the .json file.
+We unfortunately were blocked from uploading this to google app engine due to the sensitive information disclosed in the .json file and couldn't find a proper solution in time.
+
 To use this software you will need 
 <ul>
   <li>PyCharm 3.8.2</li>
@@ -28,4 +33,16 @@ To use this software you will need
     <li>flask</li>
     <li>wtforms</li>
   </ul>
+  <li>On getting access to the reddit API, you'll need to change the reddit_info.json file to include your own information.**
   </ul>
+  
+## json file and reddit API
+You can follow this tutorial up the 3:00 timestamp to set up reddit API : https://www.youtube.com/watch?v=gIZJQmX-55U
+Once you get your application setup, you must change all the 'xxxxxx' options in the json file to your account information to get this program to work.
+
+## Editing main.py
+If you want to do your own sleuthing there are two key lines to change.
+<ul>
+  <li>top_headlines_in_year = subreddit.top("year", limit=1000) change limit to change submission's gathered number(note: 994 seems to be reddits limit on top posts)</li>
+  <li>all_headlines = reddit.compile_subreddits(["popular", "news", "politics", "worldnews", "science"]) change the list to be whatever subreddits you want to gather from</li>
+  
