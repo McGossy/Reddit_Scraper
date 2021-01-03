@@ -33,11 +33,12 @@ To use this software you will need
     <li>flask</li>
     <li>wtforms</li>
   </ul>
-  <li>On getting access to the reddit API, you'll need to change the reddit_info.json file to include your own information.**
+  <li>On getting access to the reddit API, you'll need to change the reddit_info.json file to include your own information.*
   </ul>
   
-## json file and reddit API
-You can follow this tutorial up the 3:00 timestamp to set up reddit API : https://www.youtube.com/watch?v=gIZJQmX-55U
+## *json file and reddit API
+https://www.youtube.com/watch?v=gIZJQmX-55U
+You can follow the above tutorial up the 3:00 timestamp to set up reddit API with a reddit account.
 Once you get your application setup, you must change all the 'xxxxxx' options in the json file to your account information to get this program to work.
 
 ## Editing main.py
