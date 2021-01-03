@@ -38,6 +38,7 @@ To use this software you will need
   
 ## *json file and reddit API
 https://www.youtube.com/watch?v=gIZJQmX-55U
+
 You can follow the above tutorial up the 3:00 timestamp to set up reddit API with a reddit account.
 Once you get your application setup, you must change all the 'xxxxxx' options in the json file to your account information to get this program to work.
 
