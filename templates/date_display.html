@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Top Dates 2020</h1>
+    {% for key in dates %}
+        <p><b>{{ key + ' '}}</b>:{{' '}}{{ dates[key] }} </p>
+    {% endfor %}
+{% endblock content %}
