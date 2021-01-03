@@ -24,7 +24,7 @@ class Reddit:
 
         for i in range(len(subreddits)):
             subreddit = self.reddit.subreddit(subreddits[i])
-            top_headlines_in_year = subreddit.top("year", limit=5)
+            top_headlines_in_year = subreddit.top("year", limit=1000)
 
             for submission in top_headlines_in_year:
                 headlines.add(submission)
@@ -104,10 +104,15 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, Length
 
-#Used for the search extension
-class SearchForm(FlaskForm):
+#Used for the Word search extension
+class WordSearchForm(FlaskForm):
     search = StringField('Search', validators=[DataRequired(), Length(min=2, max=20)])
-    submit = SubmitField('Search')
+    submit = SubmitField('Submit')
+
+#Used for Date search extension
+class DateSearchForm(FlaskForm):
+    search = StringField('Search Format : (mm/dd/yyyy)', validators=[DataRequired(), Length(min=2, max=20)])
+    submit = SubmitField('Submit')
 
 #initialize Flask and config with secret key(needed for forms)
 app = Flask(__name__)
@@ -129,15 +134,17 @@ global data
 @app.route('/search_words', methods=["GET", "POST"])
 def search_words():
     global data
-    form = SearchForm()
+    form = WordSearchForm()
     if form.validate_on_submit():
+        data = form.search.data.lower()
         print(form.search.data)
-        form.search.data = form.search.data.lower()
-        if form.search.data in word_list:
-            data = form.search.data
-            return redirect(url_for('search_words_results'))
+        data = form.search.data.lower()
+        if data in word_list:
+            display = '[' + data + ']' + ' was found ' + str(word_list[data]) + ' times.'
+            flash(display, 'success')
         else:
-            flash('Not found', 'danger')
+            display = '[' + data + ']' + ' was not found '
+            flash(display, 'danger')
     return render_template('search_words.html', title='Word Search', words=word_list, form=form)
 
 @app.route("/search_words_results", methods=["GET", "POST"])
@@ -149,15 +156,18 @@ global data
 @app.route('/search_dates', methods=["GET", "POST"])
 def search_dates():
     global data
-    form = SearchForm()
+    form = DateSearchForm()
     if form.validate_on_submit():
+        data = form.search.data.lower()
         print(form.search.data)
-        form.search.data = form.search.data.lower()
-        if form.search.data in date_list:
+        data = form.search.data.lower()
+        if data in date_list:
             data = form.search.data
-            return redirect(url_for('search_dates_results'))
+            display = '[' + data + ']' + ' was found ' + str(date_list[data]) + ' times.'
+            flash(display, 'success')
         else:
-            flash('Not found', 'danger')
+            display = '[' + data + ']' + ' was not found '
+            flash(display, 'danger')
     return render_template('search_dates.html', title='Date Search', dates=date_list, form=form)
 
 @app.route("/search_dates_results", methods=["GET", "POST"])
