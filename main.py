@@ -10,11 +10,11 @@ class Reddit:
     def __init__(self):
         self.file = open('reddit_info.json')
         self.info = json.load(self.file)
-        self.reddit = praw.Reddit(client_id = self.info[0]['client_id'],
-                        client_secret = self.info[0]['client_secret'],
-                        user_agent = self.info[0]['user_agent'],
-                        username = self.info[0]['username'],
-                        password = self.info[0]['password'])
+        self.reddit = praw.Reddit(client_id = self.info['client_id'],
+                        client_secret = self.info['client_secret'],
+                        user_agent = self.info['user_agent'],
+                        username = self.info['username'],
+                        password = self.info['password'])
         self.wordcounts = {}
         self.datecounts = {}
 
